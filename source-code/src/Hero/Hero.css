@@ -1,0 +1,302 @@
+/* =========================
+   Theme Variables
+========================= */
+:root {
+  --bg-gradient: linear-gradient(to bottom right, #eaf3ff94, #f9fbff00);
+  --hero-bg: linear-gradient(to bottom, #f8fafc, #ffffff);
+
+  --text-primary: #0f172a;   /* slate-900 */
+  --text-secondary: #475569; /* slate-600 */
+  --tagline-text: #1d4ed8;   /* blue-700 */
+
+  --tagline-bg: #eff6ff;     /* blue-50 */
+  --tagline-border: #bfdbfe; /* blue-200 */
+
+  --btn-primary-bg: #0f172a;
+  --btn-primary-hover: #1e293b;
+  --btn-primary-text: #ffffff;
+
+  --btn-outline-border: #cbd5e1;
+  --btn-outline-text: #0f172a;
+  --btn-outline-hover-bg: #f1f5f9;
+
+  --contact-text: #475569;
+  --contact-hover: #0f172a;
+
+  --social-text: #475569;
+  --social-hover: #0f172a;
+}
+
+/* Dark mode (system preference) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-gradient: linear-gradient(to bottom right, #1e293b, #0f172a);
+    --hero-bg: linear-gradient(to bottom, #0f172a, #1e293b);
+
+    --text-primary: #f8fafc;   /* light slate */
+    --text-secondary: #cbd5e1; /* gray-300 */
+    --tagline-text: #93c5fd;   /* blue-300 */
+
+    --tagline-bg: #1e3a8a;     /* dark blue */
+    --tagline-border: #3b82f6; /* blue-500 */
+
+    --btn-primary-bg: #2563eb;
+    --btn-primary-hover: #1d4ed8;
+    --btn-primary-text: #ffffff;
+
+    --btn-outline-border: #475569;
+    --btn-outline-text: #f8fafc;
+    --btn-outline-hover-bg: #1e293b;
+
+    --contact-text: #cbd5e1;
+    --contact-hover: #ffffff;
+
+    --social-text: #cbd5e1;
+    --social-hover: #ffffff;
+  }
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  width: 100%;
+  /* min-height: 100vh; */
+  background: var(--bg-gradient);
+  padding-top: 70px;
+  /* padding-bottom: 50px; */
+}
+
+.hero-wrapper {
+  overflow: hidden;
+  background: var(--hero-bg);
+  /* min-height: 100vh; */
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.blob {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.blob-blue {
+  top: -6rem;
+  left: -4rem;
+  background: rgba(147, 197, 253, 0.4);
+}
+
+.blob-indigo {
+  bottom: -7rem;
+  right: -4rem;
+  background: rgba(165, 180, 252, 0.4);
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 9rem 1.5rem 6rem;
+  width: 100%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero-title {
+  margin-top: 1rem;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 36rem;
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--tagline-text);
+  background: var(--tagline-bg);
+  border: 1px solid var(--tagline-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn.primary:hover {
+  background: var(--btn-primary-hover);
+}
+
+.btn.outline {
+  border: 1px solid var(--btn-outline-border);
+  color: var(--btn-outline-text);
+}
+
+.btn.outline:hover {
+  background: var(--btn-outline-hover-bg);
+}
+
+.hero-contact {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--contact-text);
+}
+
+.hero-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-contact a:hover {
+  color: var(--contact-hover);
+}
+
+.hero-socials {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--social-text);
+}
+
+.hero-socials a {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hero-socials a:hover {
+  color: var(--social-hover);
+  transform: translateY(-3px);
+}
+
+/* .hero-image img {
+  width: 100%;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  object-position: top center;
+  aspect-ratio: 4/3;
+} */
+ .hero-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animated border using ::before */
+.hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px; /* border thickness */
+  background: linear-gradient(90deg, #ff4d4d, #4dff88, #4da6ff, #ff4dff);
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude; /* cuts out the inside */
+  pointer-events: none;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover lift */
+.hero-image:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 1.5rem;
+  transition: transform 0.6s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero {
+    padding-top: 0px;
+  }
+  .hero-container {
+    padding: 9rem 1.5rem 2rem;
+  }
+  .hero-contact {
+    gap: 0.5rem;
+  }
+}
