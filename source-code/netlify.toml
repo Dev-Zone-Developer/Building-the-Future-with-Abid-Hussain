@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 [[redirects]]
     from = "/*"
     to = "/index.html"
+=======
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+>>>>>>> b3c90324104bd431aea145a0213812a7e4d95e3a
     status = 200
